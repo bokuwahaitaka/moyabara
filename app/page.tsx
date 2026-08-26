@@ -61,7 +61,7 @@ export default function Home() {
   const maxTrend = Math.max(...trends.map(item => item.count), 1);
 
   function toast(message: string) { setNotice(message); window.setTimeout(() => setNotice(""), 3200); }
-  function chooseTheme(id: ThemeId, write = false) { setTheme(id); setPostTheme(id); if (write) setOpen(true); else location.hash = "feed"; }
+  function chooseTheme(id: ThemeId, write = false) { setTheme(id); setPostTheme(id); if (write) setOpen(true); else document.getElementById("feed")?.scrollIntoView(); }
   function writeFromPrompt() { setBody(`${selectedTheme.prompt}\n`); setOpen(true); }
 
   async function submit(event: FormEvent) {
