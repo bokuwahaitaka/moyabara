@@ -27,7 +27,8 @@ test("renders public Moyabara metadata", async () => {
     /^text\/html\b/i,
   );
   const html = await response.text();
-  assert.match(html, /<title>愚痴・不満を匿名で投稿できる掲示板｜もやばら<\/title>/);
-  assert.match(html, /<meta property="og:title" content="もやばら｜その『なんか嫌だ』、あなただけじゃない"\/>/);
+  assert.match(html, /<title>匿名で本音・告白・愚痴を投稿できる｜もやばら<\/title>/);
+  assert.match(html, /<meta property="og:title" content="もやばら｜愚痴だけじゃない、本音の置き場所"\/>/);
+  assert.match(html, /第三者の秘密や個人情報は扱いません/);
   assert.match(html, /<link rel="canonical" href="https:\/\/fuman-hiroba\.tswcgwc69z\.chatgpt\.site\/"\/>/);
 });
